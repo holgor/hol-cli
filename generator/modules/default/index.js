@@ -1,4 +1,11 @@
 module.exports = (api, options = {}) => {
+  api.extendPackage({
+    scripts: {
+      'build:test': 'vue-cli-service build --mode test',
+      'build:prod': 'vue-cli-service build --mode prod'
+    }
+  })
+
   api.postProcessFiles(files => {
     const appFile = files[`public/index.html`]
     if (appFile) {
@@ -10,4 +17,6 @@ module.exports = (api, options = {}) => {
       )
     }
   })
+
+  api.render('./template')
 }

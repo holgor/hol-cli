@@ -5,7 +5,7 @@ import { getToken, removeToken } from './auth'
 <%_ } _%>
 
 const TOKEN_HEADER = 'token'
-const BASE_URL = process.env.API_ROOT
+const BASE_URL = process.env.API_BASEURL
 const REQUEST_TIMEOUT = 60000
 
 // 创建axios实例
