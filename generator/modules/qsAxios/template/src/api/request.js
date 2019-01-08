@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs from 'qs'
 <%_ if (cookiesToken) { _%>
 import { getToken, removeToken } from './auth'
 <%_ } _%>
@@ -15,12 +16,15 @@ const service = axios.create({
 
 // request拦截器
 service.interceptors.request.use(
-  <%_ if (cookiesToken) { _%>
   config => {
+    <%_ if (cookiesToken) { _%>
     config.headers[TOKEN_HEADER] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
+    <%_ } _%>
+    if(config.headers['Content-Type'].indexOf('application/json') === -1&&config.data){
+      config.data = qs.stringify(config.data) // qs处理非application/json的请求
+    }
     return config
   },
-  <%_ } _%>
   error => {
     // 处理请求错误
     console.error(error) // for debug
