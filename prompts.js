@@ -1,10 +1,32 @@
 const plugins = [
-  'router',
-  'vuex',
-  'qs+axios',
-  'cookies+token',
-  'fastclick',
-  'lib-flexible+postcss-pxtorem'
+  {
+    name: 'router（Vue.js官方的路由管理器，实现SPA应用）',
+    value: 'router'
+  },
+  {
+    name: 'vuex（Vue.js官方的状态管理器，实现全局数据状态管理）',
+    value: 'vuex'
+  },
+  {
+    name: 'qs+axios（qs:请求参数处理器，axios:http请求框架）',
+    value: 'qs+axios'
+  },
+  {
+    name: 'cookies+token（使用cookies管理权限令牌）',
+    value: 'cookies+token'
+  },
+  {
+    name: 'fastclick（移动端点击响应优化）',
+    value: 'fastclick'
+  },
+  {
+    name: 'lib-flexible+postcss-pxtorem（移动端响应式+自适应方案）',
+    value: 'lib-flexible+postcss-pxtorem'
+  },
+  {
+    name: 'vee-validate（vue表单验证插件）',
+    value: 'vee-validate'
+  }
 ]
 
 module.exports = [
@@ -14,8 +36,7 @@ module.exports = [
     message: '请选择使用的插件（多选）',
     choices: plugins.map(v => {
       return {
-        name: v,
-        value: v,
+        ...v,
         checked: true
       }
     })

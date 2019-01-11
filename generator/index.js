@@ -46,11 +46,17 @@ module.exports = (api, options, rootOptions) => {
   if (options.plugins.indexOf('lib-flexible+postcss-pxtorem') !== -1) {
     require('./modules/flexibleRem')(api, options)
   }
+  
   // fastclick 移动端点击
   if (options.plugins.indexOf('fastclick') !== -1) {
     require('./modules/fastclick')(api, options)
   }
-  
+
+  // vee-validate
+  if (options.plugins.indexOf('vee-validate') !== -1) {
+    require('./modules/vee-validate')(api, options)
+  }
+
   // 常用依赖
   if (options.dependencies.length > 0) {
     let dependencies = {}
