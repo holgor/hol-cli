@@ -84,4 +84,27 @@ module.exports = [
       }
     ]
   }
+  // {
+  //   name:'cssReset',
+  //   type: 'list',
+  //   message: '请选择一个初始化的css默认样式',
+  //   choices:[
+  //     {
+  //       name: 'reset-css (全部样式设置为null)',
+  //       value: {
+  //         name: 'resetCss',
+  //         version: '^4.0.1'
+  //       }
+  //     },
+  //     {
+  //       name: 'normalize.css (清楚大部分基本样式，保持默认语义化的样式模式)',
+  //       value: {
+  //         value: {
+  //           name: 'normalizeCss',
+  //           version: '^2.1.2'
+  //         }
+  //       }
+  //     }
+  //   ]
+  // }
 ]
