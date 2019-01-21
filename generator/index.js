@@ -10,22 +10,6 @@ module.exports = (api, options, rootOptions) => {
     require('./modules/vuex')(api, options, '^3.0.1')
   }
 
-  // // 根据选择安装css默认样式
-  // if (options.cssReset) {
-  //   const deps = {
-  //     resetCss: {
-  //       'reset-css' : '^4.0.1'
-  //     },
-  //     normalizeCss: {
-  //       'normalize.css': '^2.1.2'
-  //     }
-  //   }
-
-  //   api.extendPackage({
-  //     devDependencies: deps[options.cssReset]
-  //   })
-  // }
-
   // 根据选择安装css预处理器
   if (options.cssPreprocessor) {
     const deps = {
@@ -83,6 +67,24 @@ module.exports = (api, options, rootOptions) => {
       dependencies
     })
   }
+
+  
+  // // 根据选择安装css默认样式
+  if (options.cssReset) {
+    const deps = {
+      resetCss: {
+        'reset-css' : '^4.0.1'
+      },
+      normalizeCss: {
+        'normalize.css': '^2.1.2'
+      }
+    }
+
+    api.extendPackage({
+      devDependencies: deps[options.cssReset.name]
+    })
+  }
+  
   // 默认模板
   require('./modules/default')(api, options)
 }
