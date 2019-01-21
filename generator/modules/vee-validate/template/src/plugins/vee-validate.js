@@ -8,6 +8,10 @@ Vue.use(VeeValidate, {
       // 自定义自带检验规则的错误提示
       messages: {
         // TODO 需补全所有规则
+        alpha: field => `${field}只能由英文字母组成`,
+        alpha_dash: field => `${field}只能由英文字母和下划线组成`,
+        alpha_num: field =>  `${field}只能由英文字母和数字组成`,
+        alpha_spaces: field => `${field}只能由英文字母和空格组成`,
         min: (field, n) => `${field}至少${n}位`,
         required: field => `${field}不能为空`,
         mobile: field => `${field}不符合手机规则`
