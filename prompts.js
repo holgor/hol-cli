@@ -27,6 +27,14 @@ const plugins = [{
   {
     name: "echarts（图表、数据可视化）",
     value: "echarts"
+  },
+  {
+    name: "高德地图（高德地图引擎）",
+    value: "aMap"
+  },
+  {
+    name: "百度地图（百度地图引擎）",
+    value: "bMap"
   }
 ]
 
