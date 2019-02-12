@@ -18,5 +18,7 @@ module.exports = (api, options = {}) => {
     }
   })
 
-  api.render('./template')
+  api.render('./template', {
+    useEcharts: options.plugins.indexOf('echarts') !== -1
+  })
 }

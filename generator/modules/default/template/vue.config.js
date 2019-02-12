@@ -19,5 +19,11 @@ module.exports = {
     }, // 设置代理
     before: app => {}
   },
+  <%_ if (useEcharts) { _%>
+  transpileDependencies: [ // 可能会遇到默认配置把 node_modules 中的文件排除在 Babel转译范围以外的问题。需要把vue-echarts 及 resize-detector加入transpileDependencies
+    'vue-echarts',
+    'resize-detector'
+  ],
+  <%_ } _%>
   chainWebpack: config => {}
 }
