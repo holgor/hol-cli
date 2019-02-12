@@ -6,6 +6,6 @@ module.exports = (api, options) => {
     }
   })
 
-  api.injectImports(api.entryFile, `import './plugins/fastclick.js' // 引入fastclick解决移动端点击延迟问题`)
+  api.injectImports(api.entryFile, `import './plugins/fastclick' // 引入fastclick解决移动端点击延迟问题`)
   api.render('./template')
 }

@@ -1,15 +1,11 @@
+const addPluginList = (pluginList, api, options) => {
+  for (const key in pluginList) {
+    require(`./modules/${pluginList[key]}`)(api, options)
+  }
+}
+
 module.exports = (api, options, rootOptions) => {
   console.log(options)
-  // 根据选择安装router并建立模板
-  if (options.plugins.indexOf('router') !== -1) {
-    require('./modules/router')(api, options, '^3.0.1')
-  }
-
-  // 根据选择安装vuex并建立模板
-  if (options.plugins.indexOf('vuex') !== -1) {
-    require('./modules/vuex')(api, options, '^3.0.1')
-  }
-
   // 根据选择安装css预处理器
   if (options.cssPreprocessor) {
     const deps = {
@@ -32,29 +28,27 @@ module.exports = (api, options, rootOptions) => {
     })
   }
 
-  // 使用cookies处理权限token
-  if (options.plugins.indexOf('cookies+token') !== -1) {
-    require('./modules/cookiesToken')(api, options)
+  // // 根据选择安装css默认样式
+  if (options.cssReset === 'resetCss') {
+    api.extendPackage({
+      'reset-css': '^4.0.1'
+    })
+    api.injectImports(api.entryFile, `import 'reset-css' // 引入reset-css`)
+  } else if (options.cssReset === 'normalizeCss') {
+    api.extendPackage({
+      'normalize.css': '^2.1.2'
+    })
+    api.injectImports(api.entryFile, `import 'normalize.css' // 引入normalize.css`)
   }
 
-  // qs + axios http请求框架
-  if (options.plugins.indexOf('qs+axios') !== -1) {
-    require('./modules/qsAxios')(api, options)
-  }
+  // 已选择的公共插件
+  addPluginList(options.plugins, api, options)
 
-  // lib-flexible + px2rem 手机端适配布局
-  if (options.plugins.indexOf('lib-flexible+postcss-pxtorem') !== -1) {
-    require('./modules/flexibleRem')(api, options)
-  }
-  
-  // fastclick 移动端点击
-  if (options.plugins.indexOf('fastclick') !== -1) {
-    require('./modules/fastclick')(api, options)
-  }
 
-  // vee-validate
-  if (options.plugins.indexOf('vee-validate') !== -1) {
-    require('./modules/vee-validate')(api, options)
+  if (options.runtimeConsole === 'mobile') { // 已选择的移动端项目插件
+    addPluginList(options.mobliePlugins, api, options)
+  } else if (options.runtimeConsole === 'PC') { // 已选择的PC端项目插件
+    addPluginList(options.PCPlugins, api, options)
   }
 
   // 常用依赖
@@ -68,23 +62,6 @@ module.exports = (api, options, rootOptions) => {
     })
   }
 
-  
-  // // 根据选择安装css默认样式
-  if (options.cssReset) {
-    const deps = {
-      resetCss: {
-        'reset-css' : '^4.0.1'
-      },
-      normalizeCss: {
-        'normalize.css': '^2.1.2'
-      }
-    }
-
-    api.extendPackage({
-      devDependencies: deps[options.cssReset.name]
-    })
-  }
-  
   // 默认模板
   require('./modules/default')(api, options)
 }

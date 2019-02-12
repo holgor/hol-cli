@@ -7,7 +7,7 @@ Vue.use(VeeValidate, {
     chinese: {
       // 自定义自带检验规则的错误提示
       messages: {
-        // TODO 需补全所有规则
+        // 例：根据项目需要补全规则翻译
         alpha: field => `${field}只能由英文字母组成`,
         alpha_dash: field => `${field}只能由英文字母和下划线组成`,
         alpha_num: field =>  `${field}只能由英文字母和数字组成`,

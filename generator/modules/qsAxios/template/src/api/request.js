@@ -4,7 +4,11 @@ import qs from 'qs'
 import { getToken, removeToken } from './auth'
 <%_ } _%>
 
-const TOKEN_HEADER = 'token'
+
+<%_ if (cookiesToken) { _%>
+  const TOKEN_HEADER = 'token'
+<%_ } _%>
+
 const BASE_URL = process.env.API_BASEURL
 const REQUEST_TIMEOUT = 60000
 
