@@ -31,12 +31,16 @@ module.exports = (api, options, rootOptions) => {
   // // 根据选择安装css默认样式
   if (options.cssReset === 'resetCss') {
     api.extendPackage({
-      'reset-css': '^4.0.1'
+      devDependencies: {
+        'reset-css': '^4.0.1'
+      }
     })
     api.injectImports(api.entryFile, `import 'reset-css' // 引入reset-css`)
   } else if (options.cssReset === 'normalizeCss') {
     api.extendPackage({
-      'normalize.css': '^2.1.2'
+      devDependencies: {
+        'normalize.css': '^8.0.1'
+      }
     })
     api.injectImports(api.entryFile, `import 'normalize.css' // 引入normalize.css`)
   }

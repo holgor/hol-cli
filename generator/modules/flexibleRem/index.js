@@ -1,5 +1,5 @@
 module.exports = (api, options = {}) => {
-  api.injectImports(api.entryFile, `import 'lib-flexible'`)
+  api.injectImports(api.entryFile, `import 'lib-flexible' // flexible响应式布局`)
   api.extendPackage({
     dependencies: {
       'lib-flexible': '^0.3.2'

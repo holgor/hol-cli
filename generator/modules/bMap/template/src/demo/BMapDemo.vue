@@ -13,7 +13,7 @@ export default {
   data () {
     return {
       zoom: 17,
-      center: { lng: 113.309533, lat: 23.13327 }
+      center: { lng: 113.315923, lat: 23.138504 }
     }
   },
   methods: {

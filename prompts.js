@@ -35,6 +35,9 @@ const plugins = [{
   {
     name: "百度地图（百度地图引擎）",
     value: "bMap"
+  }, {
+    name: "TinyMCE（富文本编辑器）",
+    value: "tinymce"
   }
 ]
 
@@ -121,23 +124,14 @@ module.exports = [{
     message: "请选择一个初始化的css默认样式",
     choices: [{
         name: "reset-css (全部样式设置为null)",
-        value: {
-          name: "resetCss",
-          version: "^4.0.1"
-        }
+        value: "resetCss"
       },
       {
         name: "normalize.css (清楚大部分基本样式，保持默认语义化的样式模式)",
-        value: {
-          value: {
-            name: "normalizeCss",
-            version: "^2.1.2"
-          }
-        }
+        value: "normalizeCss"
       }
     ]
   },
-
   {
     name: "dependencies",
     type: "checkbox",
