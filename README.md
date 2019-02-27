@@ -20,6 +20,6 @@ git clone
 #### 使用说明
 
 先安装vue-cli 3
-使用命令
-cd ../
+在工作空间内使用命令
+git clone https://gitee.com/holgor/mcvue-cli.git
 vue create -p ./mcvue-cli my-project -n

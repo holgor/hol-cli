@@ -127,7 +127,7 @@ module.exports = [{
         value: "resetCss"
       },
       {
-        name: "normalize.css (清楚大部分基本样式，保持默认语义化的样式模式)",
+        name: "normalize.css (清除大部分基本样式，保持默认语义化的样式模式)",
         value: "normalizeCss"
       }
     ]
