@@ -3,8 +3,13 @@ module.exports = (api, options = {}) => {
     scripts: {
       'build:test': 'vue-cli-service build --mode test',
       'build:prod': 'vue-cli-service build --mode prod'
+    },
+    dependencies: {
+      'babel-polyfill': '^6.26.0'
     }
   })
+
+  api.injectImports(api.entryFile, `import 'babel-polyfill' // 引入babel-polyfill解决浏览器es6+支持问题`)
 
   api.postProcessFiles(files => {
     const appFile = files[`public/index.html`]
