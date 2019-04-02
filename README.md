@@ -9,12 +9,12 @@
 
 ### 配置选项 
 
-##css：  
+####css：  
 1.预处理器（scss/less/stylus） 
 
 2.默认样式（reset-css/normalize.css）
 
-##公共：  
+####公共：  
 1.router（Vue.js 官方的路由管理器，实现 SPA 应用）  
 2.vuex（Vue.js 官方的状态管理器，实现全局数据状态管理）  
 3.qs+axios（qs:请求参数处理器，axios:http 请求框架）  
@@ -25,18 +25,18 @@
 8.百度地图（百度地图引擎及api）  
 9.TinyMCE（富文本编辑器）  
 
-##移动端：  
+####移动端：  
 1.fastclick（移动端点击响应优化）  
 2.lib-flexible+postcss-pxtorem（移动端响应式+自适应方案）  
 
-##PC：  
+####PC：  
 1.element-ui  
 
 ### 使用说明
 先安装 vue-cli 3  
-##1.本地下载使用  
+####1.本地下载使用  
 clone 此项目  
 接着使用命令，根据此配置构建 vue 项目  
 vue create -p ./hol-cli my-project  
-##2.线上版  
+####2.线上版  
 vue create -p holgor/hol-cli my-project  
