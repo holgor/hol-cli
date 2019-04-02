@@ -29,11 +29,11 @@ const plugins = [{
     value: "echarts"
   },
   {
-    name: "高德地图（高德地图引擎）",
+    name: "高德地图（高德地图引擎及api）",
     value: "aMap"
   },
   {
-    name: "百度地图（百度地图引擎）",
+    name: "百度地图（百度地图引擎及api）",
     value: "bMap"
   }, {
     name: "TinyMCE（富文本编辑器）",
