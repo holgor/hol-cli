@@ -46,8 +46,10 @@ vue-cli 3 预设配置文件 可配置必用插件
 git clone
 
 #### 使用说明
-
+1.本地版
 先安装 vue-cli 3
 clone 此项目
 接着使用命令，根据此配置构建 vue 项目
-vue create -p ./hol-cli my-project -n
+vue create -p ./hol-cli my-project
+2.github版
+vue create -p holgor/hol-cli my-project
