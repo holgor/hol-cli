@@ -7,9 +7,11 @@
 构建新项目时总有一些常用的组件/插件/惯用代码要引入。  
 利用 Vue-cli3 的配置、插件生成器功能，解决这种重复的搭建工作。  
 
-#### 配置选项：
+#### 配置选项 
+
 css：  
-1.预处理器（scss/less/stylus）
+1.预处理器（scss/less/stylus） 
+
 2.默认样式（reset-css/normalize.css）
 
 公共：  
@@ -30,26 +32,11 @@ css：
 PC：  
 1.element-ui  
 
-#### 软件架构
-
-1.preset.json
-vue-cli 3 预设配置文件 可配置必用插件
-
-2.prompts.js
-命令行对话 用于控制脚手架选项
-
-3.generator
-代码生成器、文件操作、模板生成
-
-#### 安装教程
-
-git clone
-
 #### 使用说明
-1.本地版
-先安装 vue-cli 3
-clone 此项目
-接着使用命令，根据此配置构建 vue 项目
-vue create -p ./hol-cli my-project
-2.github版
-vue create -p holgor/hol-cli my-project
+先安装 vue-cli 3  
+1.本地下载使用  
+clone 此项目  
+接着使用命令，根据此配置构建 vue 项目  
+vue create -p ./hol-cli my-project  
+2.线上版  
+vue create -p holgor/hol-cli my-project  
