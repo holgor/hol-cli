@@ -20,10 +20,11 @@
 3.qs+axios（qs:请求参数处理器，axios:http 请求框架）  
 4.cookies+token（使用 cookies 管理权限令牌）  
 5.vee-validate（vue 表单验证插件）  
-6.echarts（图表、数据可视化）  
-7.高德地图（高德地图引擎及api）  
-8.百度地图（百度地图引擎及api）  
-9.TinyMCE（富文本编辑器）  
+6.vue-awesome-swiper（配置齐全的swiper组件）  
+7.echarts（图表、数据可视化）  
+8.高德地图（高德地图引擎及api）  
+9.百度地图（百度地图引擎及api）  
+10.TinyMCE（富文本编辑器）  
 
 #### 移动端：  
 1.fastclick（移动端点击响应优化）  

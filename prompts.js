@@ -25,6 +25,10 @@ const plugins = [{
     checked: true
   },
   {
+    name: "vue-awesome-swiper（配置齐全的swiper组件）",
+    value: "vue-awesome-swiper",
+  },
+  {
     name: "echarts（图表、数据可视化）",
     value: "echarts"
   },
