@@ -1,33 +1,31 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './pages/Home.vue'
-
+import About from './pages/About.vue'
 Vue.use(Router)
 
-export default new Router({
-  <%_ if (historyMode) { _%>
-  mode: 'history',
-  base: process.env.BASE_URL,
-  <%_ } _%>
+const router = new Router({
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
-    },
-    {
+      component: Home,
+      meta: {
+        title: 'Home'
+      }
+    }, {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      <%_ if (doesCompile) { _%>
-      component: () => import(/* webpackChunkName: "about" */ './pages/About.vue')
-      <%_ } else { _%>
-      component: function () { 
-        return import(/* webpackChunkName: "about" */ './pages/About.vue')
+      component: About,
+      meta: {
+        title: 'About'
       }
-      <%_ } _%>
     }
   ]
 })
+
+router.afterEach((to, from) => {
+  to.meta.title && (document.title = to.meta.title) // 网页标题使用meta里的标题
+})
+
+export default router
