@@ -10,7 +10,7 @@ module.exports = (api, options, rootOptions) => {
   if (options.cssPreprocessor) {
     const deps = {
       sass: {
-        'dart-sass': '^1.20.1',
+        'node-sass': '^4.12.0',
         'sass-loader': '^7.0.1'
       },
       less: {
