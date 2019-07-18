@@ -1,7 +1,7 @@
 module.exports = (api, options = {}) => {
   api.extendPackage({
     scripts: {
-      'build:test': 'vue-cli-service build --mode test',
+      'build:testing': 'vue-cli-service build --mode testing',
       'build:prod': 'vue-cli-service build --mode prod'
     },
     dependencies: {
